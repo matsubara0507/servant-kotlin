@@ -7,12 +7,20 @@ maintainer:          example@example.com
 copyright:           2017 MATSUBARA Nobutada
 category:            Web
 extra-source-files:
-- README.md
+  - README.md
+
+ghc-options: -Wall
 
 dependencies:
   - base >= 4.7 && < 5
+  - containers
+  - text
+  - time
 
-executables:
-  servant-kotlin:
-    source-dirs:      src
-    main:             Main.hs
+library:
+  source-dirs: src
+  exposed-modules:
+    - Servant.Kotlin.Type
+    - Servant.Kotlin.Internal.Generate
+  other-modules: []
+  ghc-options: -fno-warn-orphans
