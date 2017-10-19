@@ -18,11 +18,11 @@ module Servant.Kotlin.Type
     ) where
 
 import           Data.Int     (Int16, Int32, Int64, Int8)
-import           Data.IntMap (IntMap)
-import           Data.Map (Map)
-import           Data.Proxy (Proxy (..))
-import           Data.Text (Text, pack)
-import           Data.Time (UTCTime)
+import           Data.IntMap  (IntMap)
+import           Data.Map     (Map)
+import           Data.Proxy   (Proxy (..))
+import           Data.Text    (Text, pack)
+import           Data.Time    (UTCTime)
 import           GHC.Generics
 
 data KotlinClass

@@ -6,10 +6,10 @@ module Servant.Kotlin.Internal.Generate
     , generateDefKotlinDataClass'
     ) where
 
-import Servant.Kotlin.Type
-import Data.Monoid ((<>))
-import Data.Text (Text)
-import qualified Data.Text as Text
+import           Data.Monoid         ((<>))
+import           Data.Text           (Text)
+import qualified Data.Text           as Text
+import           Servant.Kotlin.Type
 
 class GenerateKotlin a where
   generateKotlin :: a -> [Text]
@@ -17,8 +17,8 @@ class GenerateKotlin a where
   generateKotlin' = Text.concat . generateKotlin
 
 instance GenerateKotlin KotlinClass where
-  generateKotlin (PrimitiveClass c) = generateKotlin c
-  generateKotlin (ExClass c) = generateKotlin c
+  generateKotlin (PrimitiveClass c)                   = generateKotlin c
+  generateKotlin (ExClass c)                          = generateKotlin c
   generateKotlin (DataClass (KotlinDataClass name _)) = [name]
 
 instance GenerateKotlin KotlinPrimitiveClass where
@@ -58,7 +58,7 @@ instance GenerateKotlin KotlinField where
 
 generateDefKotlinDataClass :: KotlinClass -> Text
 generateDefKotlinDataClass (DataClass c) = generateKotlin' c
-generateDefKotlinDataClass _ = ""
+generateDefKotlinDataClass _             = ""
 
 generateDefKotlinDataClass' :: (KotlinType a) => a -> Text
 generateDefKotlinDataClass' =
