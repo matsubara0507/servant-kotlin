@@ -24,9 +24,15 @@ library
   build-depends:
       base >= 4.7 && < 5
     , containers
+    , lens
+    , servant
+    , servant-foreign
     , text
     , time
+    , wl-pprint-text
   exposed-modules:
+      Servant.Kotlin
       Servant.Kotlin.Type
+      Servant.Kotlin.Internal.Foreign
       Servant.Kotlin.Internal.Generate
   default-language: Haskell2010

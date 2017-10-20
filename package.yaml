@@ -14,13 +14,19 @@ ghc-options: -Wall
 dependencies:
   - base >= 4.7 && < 5
   - containers
+  - lens
+  - servant
+  - servant-foreign
   - text
   - time
+  - wl-pprint-text
 
 library:
   source-dirs: src
   exposed-modules:
+    - Servant.Kotlin
     - Servant.Kotlin.Type
+    - Servant.Kotlin.Internal.Foreign
     - Servant.Kotlin.Internal.Generate
   other-modules: []
   ghc-options: -fno-warn-orphans

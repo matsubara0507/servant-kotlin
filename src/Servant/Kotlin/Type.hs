@@ -15,15 +15,18 @@ module Servant.Kotlin.Type
     , KotlinType (..)
     , GenericKotlinType (..)
     , GenericKotlinFields (..)
+    , toKotlinType'
     ) where
 
 import           Data.Int     (Int16, Int32, Int64, Int8)
 import           Data.IntMap  (IntMap)
 import           Data.Map     (Map)
+import           Data.Maybe   (fromMaybe)
 import           Data.Proxy   (Proxy (..))
 import           Data.Text    (Text, pack)
 import           Data.Time    (UTCTime)
 import           GHC.Generics
+import           Servant.API  (NoContent (..))
 
 data KotlinClass
   = PrimitiveClass KotlinPrimitiveClass
@@ -44,6 +47,7 @@ data KotlinPrimitiveClass
   | KString
   | KUnit
   | KNullable KotlinClass
+  | KAny
   deriving (Show, Eq)
 
 data KotlinExClass
@@ -170,3 +174,9 @@ instance (KotlinType k, KotlinType v) => KotlinType (Map k v) where
 instance (KotlinType v) => KotlinType (IntMap v) where
   toKotlinType _ =
     PrimitiveClass . KArray <$> toKotlinType (Proxy :: Proxy v)
+
+instance KotlinType NoContent where
+  toKotlinType _ = Just $ PrimitiveClass KUnit
+
+toKotlinType' :: (KotlinType a) => a -> KotlinClass
+toKotlinType' = fromMaybe (PrimitiveClass KAny) . toKotlinType
