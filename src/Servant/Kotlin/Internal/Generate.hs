@@ -6,6 +6,7 @@ module Servant.Kotlin.Internal.Generate
     ( GenerateKotlin (..)
     , generateKotlinForDefDataClass
     , generateKotlinForDefDataClass'
+    , defKotlinImports
     , generateKotlinForAPIClass
     , generateKotlinForAPI
     , generateKotlinForAPIWith
@@ -84,6 +85,20 @@ generateKotlinForDefDataClass' _             = []
 generateKotlinForDefDataClass :: (KotlinType a) => Proxy a -> [Text]
 generateKotlinForDefDataClass =
   maybe [""] generateKotlinForDefDataClass' . toKotlinType
+
+---
+
+defKotlinImports :: [Text]
+defKotlinImports = fmap (T.append "import ")
+  [ "com.github.kittinunf.fuel.Fuel"
+  , "com.github.kittinunf.fuel.core.FuelError"
+  , "com.github.kittinunf.fuel.core.FuelManager"
+  , "com.github.kittinunf.fuel.core.Request"
+  , "com.github.kittinunf.fuel.core.Response"
+  , "com.github.kittinunf.fuel.gson.responseObject"
+  , "com.github.kittinunf.result.Result"
+  , "com.google.gson.Gson"
+  ]
 
 ---
 
