@@ -1,6 +1,9 @@
 module Servant.Kotlin
-       ( generateKotlinForAPI
+       ( generateKotlinForDefDataClass
+       , defKotlinImports
+       , generateKotlinForAPI
        , generateKotlinForAPIWith
+       , generateKotlinForAPIClass
        , KotlinOptions(..)
        , UrlPrefix(..)
        , defKotlinOptions
@@ -12,9 +15,12 @@ module Servant.Kotlin
 
 import           Servant.Kotlin.Internal.Generate (KotlinOptions (..),
                                                    UrlPrefix (..),
+                                                   defKotlinImports,
                                                    defKotlinOptions,
                                                    generateKotlinForAPI,
-                                                   generateKotlinForAPIWith)
+                                                   generateKotlinForAPIClass,
+                                                   generateKotlinForAPIWith,
+                                                   generateKotlinForDefDataClass)
 
 import           Data.Proxy                       (Proxy (Proxy))
 import           Servant.Kotlin.Type              (KotlinType)
