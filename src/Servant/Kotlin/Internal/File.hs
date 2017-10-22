@@ -38,7 +38,7 @@ specToFile rootDir spec = do
     file = makePath path <> ".kt"
     namespaceText = Text.intercalate "." (namespace spec)
     body = Text.intercalate "\n\n" $
-             "package " <> namespaceText : "" : declarations spec
+             "package " <> namespaceText : declarations spec
 
 specsToDir :: [Spec] -> FilePath -> IO ()
 specsToDir specs rootDir = mapM_ processSpec specs

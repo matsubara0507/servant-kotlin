@@ -31,16 +31,15 @@ type CRUD = "scores" :> Get '[JSON] [Score]
 
 body :: [Text]
 body = mconcat
-  [ defKotlinImports
-  , ["\n"]
+  [ [ defKotlinImports ]
   , generateKotlinForAPIClass "ScoreAPI" $ mconcat
-      [ ["\n"]
-      , generateKotlinForDefDataClass (Proxy :: Proxy Score)
-      , ["\n"]
+      [ generateKotlinForDefDataClass (Proxy :: Proxy Score)
       , generateKotlinForAPI (Proxy :: Proxy CRUD)
       ]
   ]
 
+spec :: Spec
+spec = Spec ["com", "github", "matsubara0507"] "ScoreAPI" body
 
 main :: IO ()
-main =  mapM_ (putStrLn . unpack) body
+main = specsToDir [spec] "example"

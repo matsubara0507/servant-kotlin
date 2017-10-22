@@ -18,7 +18,7 @@ module Servant.Kotlin.Internal.Generate
 import           Prelude                         hiding ((<$>))
 
 import           Control.Lens                    (to, (^.))
-import           Data.List                       (nub, intersperse)
+import           Data.List                       (nub)
 import           Data.Maybe                      (catMaybes, fromMaybe)
 import           Data.Monoid                     ((<>))
 import           Data.Proxy                      (Proxy)
@@ -88,8 +88,8 @@ generateKotlinForDefDataClass =
 
 ---
 
-defKotlinImports :: [Text]
-defKotlinImports = fmap (T.append "import ")
+defKotlinImports :: Text
+defKotlinImports = docToText . vsep $ fmap ("import" <+>)
   [ "com.github.kittinunf.fuel.Fuel"
   , "com.github.kittinunf.fuel.core.FuelError"
   , "com.github.kittinunf.fuel.core.FuelManager"
@@ -106,7 +106,7 @@ generateKotlinForAPIClass :: Text -> [Text] -> [Text]
 generateKotlinForAPIClass className body = mconcat
   [ [ docToText $ "class" <+> textStrict className <> "(private val baseURL: String) {" ]
   , [ docToText $ indent indentNum initialize ]
-  , mconcat $ fmap (fmap (docToText . indent indentNum . textStrict) . T.lines) body
+  , fmap (docToText . vsep . fmap (indent indentNum . textStrict) . T.lines) body
   , [ "}" ]
   ]
   where
@@ -145,8 +145,7 @@ generateKotlinForAPIWith ::
   -> Proxy api
   -> [Text]
 generateKotlinForAPIWith opts =
-  intersperse "\n" . nub .
-    fmap (docToText . generateKotlinForRequest opts) . getEndpoints
+  nub . fmap (docToText . generateKotlinForRequest opts) . getEndpoints
 
 indentNum :: Int
 indentNum = 4
