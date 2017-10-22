@@ -6,6 +6,7 @@ module Servant.Kotlin.Internal.Generate
     ( GenerateKotlin (..)
     , generateKotlinForDefDataClass
     , generateKotlinForDefDataClass'
+    , generateKotlinForAPIClass
     , generateKotlinForAPI
     , generateKotlinForAPIWith
     , KotlinOptions (..)
@@ -83,6 +84,27 @@ generateKotlinForDefDataClass' _             = []
 generateKotlinForDefDataClass :: (KotlinType a) => Proxy a -> [Text]
 generateKotlinForDefDataClass =
   maybe [""] generateKotlinForDefDataClass' . toKotlinType
+
+---
+
+generateKotlinForAPIClass :: Text -> [Text] -> [Text]
+generateKotlinForAPIClass className body = mconcat
+  [ [ docToText $ "class" <+> textStrict className <> "(private val baseURL: String) {" ]
+  , [ docToText $ indent indentNum initialize ]
+  , mconcat $ fmap (fmap (docToText . indent indentNum . textStrict) . T.lines) body
+  , [ "}" ]
+  ]
+  where
+    initialize = vsep [ "init {", indent indentNum fuelManager, "}" ]
+    fuelManager = vsep
+      [ "FuelManager.instance.apply {"
+      , indent indentNum "basePath = baseURL"
+      , indent indentNum $ "baseHeaders = mapOf(" <> header <> ")"
+      , "}"
+      ]
+    header = hsep . punctuate comma $
+      fmap (\(k, v) -> dquotes k <+> "to" <+> dquotes v)
+        [("Content-Type", "application/json"), ("Device", "Android")]
 
 ---
 
