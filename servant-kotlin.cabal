@@ -22,8 +22,10 @@ library
       src
   ghc-options: -Wall -fno-warn-orphans
   build-depends:
-      base >= 4.7 && < 5
+      aeson
+    , base >= 4.7 && < 5
     , containers
+    , http-api-data
     , lens
     , servant
     , servant-foreign

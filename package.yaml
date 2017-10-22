@@ -12,8 +12,10 @@ extra-source-files:
 ghc-options: -Wall
 
 dependencies:
+  - aeson
   - base >= 4.7 && < 5
   - containers
+  - http-api-data
   - lens
   - servant
   - servant-foreign
