@@ -7,12 +7,15 @@ module Servant.Kotlin
        , KotlinOptions(..)
        , UrlPrefix(..)
        , defKotlinOptions
+       , Spec (..)
+       , specsToDir
        -- * Convenience re-exports from the "Kotlin" module
        , KotlinType
        -- * Convenience re-exports from "Data.Proxy"
        , Proxy(Proxy)
        ) where
 
+import           Servant.Kotlin.Internal.File     (Spec (..), specsToDir)
 import           Servant.Kotlin.Internal.Generate (KotlinOptions (..),
                                                    UrlPrefix (..),
                                                    defKotlinImports,

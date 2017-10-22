@@ -15,6 +15,8 @@ dependencies:
   - aeson
   - base >= 4.7 && < 5
   - containers
+  - directory
+  - formatting
   - http-api-data
   - lens
   - servant
@@ -28,6 +30,7 @@ library:
   exposed-modules:
     - Servant.Kotlin
     - Servant.Kotlin.Type
+    - Servant.Kotlin.Internal.File
     - Servant.Kotlin.Internal.Foreign
     - Servant.Kotlin.Internal.Generate
   other-modules: []
