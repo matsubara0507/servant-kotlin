@@ -27,7 +27,7 @@ class ScoreAPI(private val baseURL: String) {
 
     fun postScores(body: Score, handler: (Request, Response, Result<Score, FuelError>) -> Unit) {
         Fuel.post("/" + "scores")
-            .body(Gson().toJSON(body, Score::class.java))
+            .body(Gson().toJson(body, Score::class.java))
             .responseObject(handler)
     }
 

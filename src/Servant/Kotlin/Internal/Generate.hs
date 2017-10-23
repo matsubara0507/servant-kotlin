@@ -277,7 +277,7 @@ mkRequest opts request = "Fuel" <> align (vsep methodChain)
       mkUrl opts (request ^. F.reqUrl . F.path) <> mkQueryParams request
 
     body = fmap (\b -> mconcat
-        [ ".body(Gson().toJSON("
+        [ ".body(Gson().toJson("
         , kotlinBodyArg
         , ", "
         , kotlinTypeRef b
