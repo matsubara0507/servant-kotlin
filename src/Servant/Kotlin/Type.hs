@@ -156,6 +156,9 @@ instance KotlinType Int64 where
 instance KotlinType Char where
   toKotlinType _ = Just $ PrimitiveClass KChar
 
+instance KotlinType Bool where
+  toKotlinType _ = Just $ PrimitiveClass KBoolean
+
 instance (KotlinType a, KotlinType b) => KotlinType (a, b) where
   toKotlinType _ = fmap ExClass $
     KPair
