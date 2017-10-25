@@ -72,6 +72,8 @@ install:
   case "$BUILD" in
     stack)
       stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies
+      stack runghc $HOME/example/Generater.hs
+      cd example && gradle build
       ;;
     cabal)
       cabal --version
@@ -88,8 +90,6 @@ script:
   case "$BUILD" in
     stack)
       stack --no-terminal $ARGS test --bench --no-run-benchmarks --haddock --no-haddock-deps
-      stack runghc ./example/Generater.hs
-      cd example && gradle build
       ;;
     cabal)
       cabal install --enable-tests --enable-benchmarks --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1 $CABALARGS $PACKAGES
