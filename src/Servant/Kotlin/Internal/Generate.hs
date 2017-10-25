@@ -84,7 +84,7 @@ generateKotlinForDefDataClass' _             = []
 
 generateKotlinForDefDataClass :: (KotlinType a) => Proxy a -> [Text]
 generateKotlinForDefDataClass =
-  maybe [""] generateKotlinForDefDataClass' . toKotlinType
+  maybe [] generateKotlinForDefDataClass' . toKotlinType
 
 ---
 

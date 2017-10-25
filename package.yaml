@@ -12,12 +12,10 @@ extra-source-files:
 ghc-options: -Wall
 
 dependencies:
-  - aeson
   - base >= 4.7 && < 5
   - containers
   - directory
   - formatting
-  - http-api-data
   - lens
   - servant
   - servant-foreign
@@ -35,3 +33,14 @@ library:
     - Servant.Kotlin.Internal.Generate
   other-modules: []
   ghc-options: -fno-warn-orphans
+
+tests:
+  spec:
+    main: Spec.hs
+    source-dirs:
+      - src
+      - test
+    dependencies:
+      - aeson
+      - hspec >=2.4.1 && <2.5
+      - http-api-data
