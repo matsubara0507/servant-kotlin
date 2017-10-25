@@ -23,15 +23,15 @@ library
   ghc-options: -Wall -fno-warn-orphans
   build-depends:
       base >= 4.7 && < 5
-    , containers
-    , directory
-    , formatting
-    , lens
-    , servant
-    , servant-foreign
-    , text
-    , time
-    , wl-pprint-text
+    , containers >= 0.5.7 && < 0.6.0
+    , directory >= 1.3 && < 1.4
+    , formatting >= 6.2.4 && < 6.3
+    , lens >= 4.15 && < 4.16
+    , servant >= 0.9 && < 0.12
+    , servant-foreign >= 0.9 && < 0.12
+    , text >= 1.2.2 && < 1.2.3
+    , time >= 1.6 && < 1.9
+    , wl-pprint-text >= 1.1 && < 1.2
   exposed-modules:
       Servant.Kotlin
       Servant.Kotlin.Type
@@ -49,18 +49,18 @@ test-suite spec
   ghc-options: -Wall
   build-depends:
       base >= 4.7 && < 5
-    , containers
-    , directory
-    , formatting
-    , lens
-    , servant
-    , servant-foreign
-    , text
-    , time
-    , wl-pprint-text
-    , aeson
-    , hspec >=2.4.1 && <2.5
-    , http-api-data
+    , containers >= 0.5.7 && < 0.6.0
+    , directory >= 1.3 && < 1.4
+    , formatting >= 6.2.4 && < 6.3
+    , lens >= 4.15 && < 4.16
+    , servant >= 0.9 && < 0.12
+    , servant-foreign >= 0.9 && < 0.12
+    , text >= 1.2.2 && < 1.2.3
+    , time >= 1.6 && < 1.9
+    , wl-pprint-text >= 1.1 && < 1.2
+    , aeson >= 1.0 && < 1.3
+    , hspec >= 2.4.1 && < 2.5
+    , http-api-data >= 0.3.7 && < 0.3.8
   other-modules:
       Servant.Kotlin
       Servant.Kotlin.Internal.File
