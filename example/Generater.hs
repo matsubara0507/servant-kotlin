@@ -44,4 +44,4 @@ spec :: Spec
 spec = Spec ["com", "github", "matsubara0507"] "TodoAPI" body
 
 main :: IO ()
-main = specsToDir [spec] "example"
+main = specsToDir [spec] "example/src/main/java"
