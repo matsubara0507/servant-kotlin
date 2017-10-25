@@ -88,7 +88,7 @@ script:
   case "$BUILD" in
     stack)
       stack --no-terminal $ARGS test --bench --no-run-benchmarks --haddock --no-haddock-deps
-      stack runghc example/Generater.hs
+      stack runghc ./example/Generater.hs
       cd example && gradle build
       ;;
     cabal)
