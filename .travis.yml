@@ -61,9 +61,6 @@ before_install:
     echo 'jobs: $ncpus' >> $HOME/.cabal/config
   fi
 
-# Gradle init for Kotlin
-- cd example && gradle init
-
 install:
 - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
 - if [ -f configure.ac ]; then autoreconf -i; fi
@@ -88,7 +85,6 @@ script:
   case "$BUILD" in
     stack)
       stack --no-terminal $ARGS test --bench --haddock --no-haddock-deps
-      gradle build example
       ;;
     cabal)
       cabal install --enable-tests --enable-benchmarks --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1 $CABALARGS $PACKAGES

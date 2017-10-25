@@ -89,4 +89,5 @@ benchmark generate-test
     , aeson >= 1.0 && < 1.3
     , http-api-data >= 0.3.7 && < 0.3.8
     , servant-kotlin
+    , shelly >= 1.6.8 && < 1.6.9
   default-language: Haskell2010
