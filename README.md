@@ -20,4 +20,4 @@ this file generate [`TodoAPI.kt`](/example/com/github/matsubara0507/TodoAPI.kt).
 
 ## Acknowledgement
 
-This package is greatly inspired by [`export-elm`](https://hackage.haskell.org/package/elm-export) and [`servant-elm`](https://hackage.haskell.org/package/servant-elm).
+This package is greatly inspired by [`elm-export`](https://hackage.haskell.org/package/elm-export) and [`servant-elm`](https://hackage.haskell.org/package/servant-elm).
