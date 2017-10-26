@@ -8,12 +8,13 @@ module Main where
 
 import           Data.Aeson                  (FromJSON, ToJSON)
 import           Data.Proxy                  (Proxy (Proxy))
-import           Data.Text                   (Text, unpack)
+import           Data.Text                   (Text)
 import           GHC.Generics                (Generic)
 import           Servant.API                 ((:<|>) (..), (:>), Capture,
                                               Delete, FormUrlEncoded, Get, JSON,
                                               Post, Put, ReqBody)
 import           Servant.Kotlin
+import           Shelly                      (cd, run_, shelly, which)
 import           Web.Internal.FormUrlEncoded (FromForm)
 
 data Todo = Todo
@@ -44,4 +45,8 @@ spec :: Spec
 spec = Spec ["com", "github", "matsubara0507"] "TodoAPI" body
 
 main :: IO ()
-main = specsToDir [spec] "example"
+main = do
+  specsToDir [spec] "example/src/main/java"
+  shelly $ do
+    cd "example"
+    which "gradle" >>= mapM_ (\_ -> run_ "gradle" ["build"])
