@@ -14,7 +14,7 @@ import           Servant.API                 ((:<|>) (..), (:>), Capture,
                                               Delete, FormUrlEncoded, Get, JSON,
                                               Post, Put, ReqBody)
 import           Servant.Kotlin
-import           Shelly                      (cd, run_, shelly)
+import           Shelly                      (cd, run_, shelly, which)
 import           Web.Internal.FormUrlEncoded (FromForm)
 
 data Todo = Todo
@@ -49,4 +49,4 @@ main = do
   specsToDir [spec] "example/src/main/java"
   shelly $ do
     cd "example"
-    run_ "gradle" ["build"]
+    which "gradle" >>= mapM_ (\_ -> run_ "gradle" ["build"])
