@@ -1,5 +1,10 @@
 # Servant Kotlin
 
+[![Hackage](https://img.shields.io/hackage/v/servant-kotlin.svg?style=flat)](https://hackage.haskell.org/package/servant-kotlin)
+[![Build Status](https://travis-ci.org/matsubara0507/servant-kotlin.svg?branch=master)](https://travis-ci.org/matsubara0507/servant-kotlin)
+[![Stackage LTS](http://stackage.org/package/servant-kotlin/badge/lts)](http://stackage.org/lts/package/servant-kotlin)
+[![Stackage Nightly](http://stackage.org/package/servant-kotlin/badge/nightly)](http://stackage.org/nightly/package/servant-kotlin)
+
 Generate Kotlin class to query your Servant API!
 
 ## Example
