@@ -2,6 +2,12 @@ plugins {
     id "org.jetbrains.kotlin.jvm" version "1.1.51"
 }
 
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:kotlin-stdlib-jre8"
     compile 'com.github.kittinunf.fuel:fuel:1.11.0'
