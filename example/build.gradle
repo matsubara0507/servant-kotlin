@@ -4,6 +4,8 @@ plugins {
 
 apply plugin: 'application'
 
+mainClassName = 'com.githu.matsubara0507.Mainkt'
+
 repositories {
     jcenter()
 }
