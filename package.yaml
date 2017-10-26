@@ -1,9 +1,9 @@
 name:                servant-kotlin
 version:             0.1.0.0
 homepage:            https://github.com/matsubara0507/servant-kotlin#readme
-license:             BSD3
+license:             MIT
 author:              MATSUBARA Nobutada
-maintainer:          example@example.com
+maintainer:          MATSUBARA Nobutada
 copyright:           2017 MATSUBARA Nobutada
 category:            Web
 extra-source-files:
