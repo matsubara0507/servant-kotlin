@@ -3,7 +3,7 @@
 -- see: https://github.com/sol/hpack
 
 name:           servant-kotlin
-version:        0.1.0.0
+version:        0.1.0.1
 synopsis:       Automatically derive Kotlin class to query servant webservices
 description:    See README at <https://github.com/matsubara0507/servant-kotlin#readme>
 category:       Web
