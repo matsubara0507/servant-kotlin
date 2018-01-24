@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0eee5f170187f5dce396c659be880786ca64595afcdaaa555ac37caed8a87872
+-- hash: d6f32690939e10fcc2ed7ae58b2c14e99ad6636cf548f5b1eab915bdba8d47f4
 
 name:           servant-kotlin
 version:        0.1.0.2
@@ -12,7 +12,7 @@ category:       Web
 homepage:       https://github.com/matsubara0507/servant-kotlin#readme
 author:         MATSUBARA Nobutada
 maintainer:     MATSUBARA Nobutada
-copyright:      2017 MATSUBARA Nobutada
+copyright:      2017-2018 MATSUBARA Nobutada
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple

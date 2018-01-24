@@ -6,7 +6,7 @@ homepage:            https://github.com/matsubara0507/servant-kotlin#readme
 license:             MIT
 author:              MATSUBARA Nobutada
 maintainer:          MATSUBARA Nobutada
-copyright:           2017 MATSUBARA Nobutada
+copyright:           2017-2018 MATSUBARA Nobutada
 category:            Web
 extra-source-files:
   - README.md
