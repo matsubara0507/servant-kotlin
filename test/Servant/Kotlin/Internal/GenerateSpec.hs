@@ -132,7 +132,7 @@ spec = do
             , "}"
             ]
         , T.intercalate "\n"
-            [ "fun getWithaheader(header_myTextHeader: String, header_MyIntHeader: Int, handler: (Request, Response, Result<String, FuelError>) -> Unit) {"
+            [ "fun getWithaheader(header_myTextHeader: String?, header_MyIntHeader: Int?, handler: (Request, Response, Result<String, FuelError>) -> Unit) {"
             , "    Fuel.get(\"/\" + \"with-a-header\")"
             , "        .responseObject(handler)"
             , "}"
