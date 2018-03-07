@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f0ac27ee120fcace4bd3cf882a3683d2313aa7c98f6ae13a0ac54538c89c53a4
+-- hash: c7b028947ff0f6ce469e74e45171ec429058c74c2dab47e59fe4ffa2ef5fa9e1
 
 name:           servant-kotlin
 version:        0.1.0.3
@@ -24,7 +24,7 @@ extra-source-files:
 library
   hs-source-dirs:
       src
-  ghc-options: -Wall -fno-warn-orphans
+  ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
     , containers >=0.5.7 && <0.6.0
@@ -38,10 +38,12 @@ library
     , wl-pprint-text >=1.1 && <1.2
   exposed-modules:
       Servant.Kotlin
-      Servant.Kotlin.Type
       Servant.Kotlin.Internal.File
       Servant.Kotlin.Internal.Foreign
       Servant.Kotlin.Internal.Generate
+      Servant.Kotlin.Type
+  other-modules:
+      Paths_servant_kotlin
   default-language: Haskell2010
 
 test-suite spec
