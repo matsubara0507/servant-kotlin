@@ -15,8 +15,6 @@ module Servant.Kotlin.Internal.Generate
     , UrlPrefix (..)
     ) where
 
-import           Prelude                         hiding ((<$>))
-
 import           Control.Lens                    (to, (^.))
 import           Data.List                       (nub)
 import           Data.Maybe                      (catMaybes, fromMaybe)

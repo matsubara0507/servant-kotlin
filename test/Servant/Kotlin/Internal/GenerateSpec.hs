@@ -7,6 +7,7 @@
 module Servant.Kotlin.Internal.GenerateSpec
     ( main
     , spec
+    , Todo (..)
     ) where
 
 import           Data.Proxy                       (Proxy (Proxy))
@@ -15,8 +16,8 @@ import qualified Data.Text                        as T
 import           GHC.Generics                     (Generic)
 import           Servant.Kotlin.Internal.Generate
 import           Servant.Kotlin.Type
-import           Test.Hspec                       (Spec, context, describe,
-                                                   hspec, it, shouldBe)
+import           Test.Hspec                       (Spec, describe, hspec, it,
+                                                   shouldBe)
 import           Test.TestAPI
 
 data Todo = Todo
