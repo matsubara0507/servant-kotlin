@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c7b028947ff0f6ce469e74e45171ec429058c74c2dab47e59fe4ffa2ef5fa9e1
+-- hash: cd9a3e8462079580aadeab1476d6cef04717e1165874e1ddcfaeb34f55afc63a
 
 name:           servant-kotlin
 version:        0.1.0.3
@@ -30,8 +30,8 @@ library
     , containers >=0.5.7 && <0.6.0
     , directory >=1.3 && <1.4
     , formatting >=6.2 && <6.4
-    , lens >=4.15 && <4.16
-    , servant >=0.9 && <0.13
+    , lens >=4.15 && <4.17
+    , servant >=0.9 && <0.14
     , servant-foreign >=0.9 && <0.12
     , text >=1.2 && <1.3
     , time >=1.6 && <1.9
@@ -61,8 +61,8 @@ test-suite spec
     , formatting >=6.2 && <6.4
     , hspec >=2.4.1 && <2.5
     , http-api-data >=0.3.7 && <0.3.8
-    , lens >=4.15 && <4.16
-    , servant >=0.9 && <0.13
+    , lens >=4.15 && <4.17
+    , servant >=0.9 && <0.14
     , servant-foreign >=0.9 && <0.12
     , text >=1.2 && <1.3
     , time >=1.6 && <1.9
@@ -89,8 +89,8 @@ benchmark generate-test
     , directory >=1.3 && <1.4
     , formatting >=6.2 && <6.4
     , http-api-data >=0.3.7 && <0.3.8
-    , lens >=4.15 && <4.16
-    , servant >=0.9 && <0.13
+    , lens >=4.15 && <4.17
+    , servant >=0.9 && <0.14
     , servant-foreign >=0.9 && <0.12
     , servant-kotlin
     , shelly >=1.6.8 && <1.8
