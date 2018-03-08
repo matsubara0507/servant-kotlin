@@ -15,7 +15,7 @@ import           Servant.API         ((:<|>), (:>), Capture, Get, GetNoContent,
                                       QueryParams, ReqBody)
 import           Servant.Kotlin.Type (KotlinType)
 
-data Book = Book
+newtype Book = Book
     { title :: Text
     } deriving (Generic, KotlinType, Show, Eq)
 

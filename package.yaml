@@ -1,5 +1,5 @@
 name:                servant-kotlin
-version:             0.1.0.3
+version:             0.1.1.0
 synopsis:            Automatically derive Kotlin class to query servant webservices
 description:         See README at <https://github.com/matsubara0507/servant-kotlin#readme>
 homepage:            https://github.com/matsubara0507/servant-kotlin#readme
@@ -18,8 +18,8 @@ dependencies:
   - containers >= 0.5.7 && < 0.6.0
   - directory >= 1.3 && < 1.4
   - formatting >= 6.2 && < 6.4
-  - lens >= 4.15 && < 4.16
-  - servant >= 0.9 && < 0.13
+  - lens >= 4.15 && < 4.17
+  - servant >= 0.9 && < 0.14
   - servant-foreign >= 0.9 && < 0.12
   - text >= 1.2 && < 1.3
   - time >= 1.6 && < 1.9
@@ -27,14 +27,6 @@ dependencies:
 
 library:
   source-dirs: src
-  exposed-modules:
-    - Servant.Kotlin
-    - Servant.Kotlin.Type
-    - Servant.Kotlin.Internal.File
-    - Servant.Kotlin.Internal.Foreign
-    - Servant.Kotlin.Internal.Generate
-  other-modules: []
-  ghc-options: -fno-warn-orphans
 
 tests:
   spec:

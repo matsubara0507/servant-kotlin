@@ -1,6 +1,11 @@
-resolver: nightly-2018-01-24
+resolver: nightly-2018-03-06
 packages:
 - .
 extra-deps: []
+# - servant-0.13
+# - lens-4.16
+# - http-types-0.12
+# - servant-foreign-0.11
+
 flags: {}
 extra-package-dbs: []

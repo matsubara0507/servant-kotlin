@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP                   #-}
 {-# LANGUAGE FlexibleContexts      #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE OverloadedStrings     #-}
@@ -14,8 +15,6 @@ module Servant.Kotlin.Internal.Generate
     , defKotlinOptions
     , UrlPrefix (..)
     ) where
-
-import           Prelude                         hiding ((<$>))
 
 import           Control.Lens                    (to, (^.))
 import           Data.List                       (nub)
@@ -228,8 +227,15 @@ kotlinHeaderArg header = "header_" <>
     . to (stext . T.replace "-" "_" . F.unPathSegment)
 
 kotlinHeaderType :: F.HeaderArg KotlinClass -> Doc
+#if MIN_VERSION_servant_foreign(0,11,0)
 kotlinHeaderType header =
   header ^. F.headerArg . F.argType . to kotlinTypeRef
+#else
+kotlinHeaderType header =
+  header ^. F.headerArg . F.argType . to (kotlinTypeRef . wrapper)
+  where
+    wrapper = PrimitiveClass . KNullable
+#endif
 
 kotlinCaptureArg :: F.Segment KotlinClass -> Doc
 kotlinCaptureArg segment = "capture_" <>
@@ -244,12 +250,17 @@ kotlinQueryArg arg = "query_" <>
   arg ^. F.queryArgName . F.argName . to (stext . F.unPathSegment)
 
 kotlinQueryType :: F.QueryArg KotlinClass -> Doc
+#if MIN_VERSION_servant_foreign(0,11,0)
+kotlinQueryType arg =
+  arg ^. F.queryArgName . F.argType . to kotlinTypeRef
+#else
 kotlinQueryType arg =
   arg ^. F.queryArgName . F.argType . to (kotlinTypeRef . wrapper)
   where
     wrapper = case arg ^. F.queryArgType of
       F.Normal -> PrimitiveClass . KNullable
-      _        ->  id
+      _        -> id
+#endif
 
 kotlinBodyArg :: Doc
 kotlinBodyArg = "body"
