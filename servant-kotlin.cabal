@@ -2,10 +2,10 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 172b9dbf15b48d58d2b11a3f4ccba9827ce448a58e0b2daff20b6e9ec6e797e4
+-- hash: 02be0ef65f54797bc6421f4627a03f6e4eae526360d6d34238848f735ac9bc9f
 
 name:           servant-kotlin
-version:        0.1.1.0
+version:        0.1.2.0
 synopsis:       Automatically derive Kotlin class to query servant webservices
 description:    See README at <https://github.com/matsubara0507/servant-kotlin#readme>
 category:       Web
