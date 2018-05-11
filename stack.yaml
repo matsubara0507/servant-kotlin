@@ -1,4 +1,4 @@
-resolver: nightly-2018-03-06
+resolver: nightly-2018-05-11
 packages:
 - .
 extra-deps: []
@@ -6,6 +6,9 @@ extra-deps: []
 # - lens-4.16
 # - http-types-0.12
 # - servant-foreign-0.11
+# - shelly-1.8.0
+# - time-1.9.1
+# - wl-pprint-text-1.2.0.0
 
 flags: {}
 extra-package-dbs: []
