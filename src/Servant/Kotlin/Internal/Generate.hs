@@ -29,7 +29,8 @@ import           Servant.API                     (NoContent (..))
 import qualified Servant.Foreign                 as F
 import           Servant.Kotlin.Internal.Foreign (LangKotlin, getEndpoints)
 import           Servant.Kotlin.Type
-import           Text.PrettyPrint.Leijen.Text    hiding ((<>))
+import           Text.PrettyPrint.Leijen.Text    (Doc, (<+>))
+import qualified Text.PrettyPrint.Leijen.Text    as PP
 
 class GenerateKotlin a where
   generateKotlin :: a -> [Text]
@@ -88,7 +89,7 @@ generateKotlinForDefDataClass =
 ---
 
 defKotlinImports :: Text
-defKotlinImports = docToText . vsep $ fmap ("import" <+>)
+defKotlinImports = docToText . PP.vsep $ fmap ("import" <+>)
   [ "com.github.kittinunf.fuel.Fuel"
   , "com.github.kittinunf.fuel.core.FuelError"
   , "com.github.kittinunf.fuel.core.FuelManager"
@@ -103,21 +104,21 @@ defKotlinImports = docToText . vsep $ fmap ("import" <+>)
 
 generateKotlinForAPIClass :: Text -> [Text] -> [Text]
 generateKotlinForAPIClass className body = mconcat
-  [ [ docToText $ "class" <+> textStrict className <> "(private val baseURL: String) {" ]
-  , [ docToText $ indent indentNum initialize ]
-  , fmap (docToText . vsep . fmap (indent indentNum . textStrict) . T.lines) body
+  [ [ docToText $ "class" <+> PP.textStrict className <> "(private val baseURL: String) {" ]
+  , [ docToText $ PP.indent indentNum initialize ]
+  , fmap (docToText . PP.vsep . fmap (PP.indent indentNum . PP.textStrict) . T.lines) body
   , [ "}" ]
   ]
   where
-    initialize = vsep [ "init {", indent indentNum fuelManager, "}" ]
-    fuelManager = vsep
+    initialize = PP.vsep [ "init {", PP.indent indentNum fuelManager, "}" ]
+    fuelManager = PP.vsep
       [ "FuelManager.instance.apply {"
-      , indent indentNum "basePath = baseURL"
-      , indent indentNum $ "baseHeaders = mapOf(" <> header <> ")"
+      , PP.indent indentNum "basePath = baseURL"
+      , PP.indent indentNum $ "baseHeaders = mapOf(" <> header <> ")"
       , "}"
       ]
-    header = hsep . punctuate comma $
-      fmap (\(k, v) -> dquotes k <+> "to" <+> dquotes v)
+    header = PP.hsep . PP.punctuate PP.comma $
+      fmap (\(k, v) -> PP.dquotes k <+> "to" <+> PP.dquotes v)
         [("Content-Type", "application/json"), ("Device", "Android")]
 
 ---
@@ -156,9 +157,9 @@ generateKotlinForRequest :: KotlinOptions -> F.Req KotlinClass -> Doc
 generateKotlinForRequest opts request = funcDef
   where
     funcDef =
-      vsep
+      PP.vsep
         [ "fun" <+> fnName <> "(" <> args <> ") {"
-        , indent indentNum kotlinRequest
+        , PP.indent indentNum kotlinRequest
         , "}"
         ]
 
@@ -173,7 +174,7 @@ generateKotlinForRequest opts request = funcDef
 
 mkArgs :: KotlinOptions -> F.Req KotlinClass -> Doc
 mkArgs opts request =
-  (hsep . punctuate comma . concat)
+  (PP.hsep . PP.punctuate PP.comma . concat)
     [ urlPrefixArg
     , headerArgs
     , urlCaptureArgs
@@ -273,7 +274,7 @@ kotlinTypeRef = stext . generateKotlin'
 
 
 mkRequest :: KotlinOptions -> F.Req KotlinClass -> Doc
-mkRequest opts request = "Fuel" <> align (vsep methodChain)
+mkRequest opts request = "Fuel" <> PP.align (PP.vsep methodChain)
   where
     methodChain = catMaybes
       [ Just $ mconcat [".", method, "(", url, ")"]
@@ -298,13 +299,14 @@ mkRequest opts request = "Fuel" <> align (vsep methodChain)
 
 
 mkUrl :: KotlinOptions -> [F.Segment KotlinClass] -> Doc
-mkUrl _opts segments = mconcat . punctuate " + " $
-  dquotes "/" : punctuate (" + " <> dquotes "/") (map segmentToDoc segments)
+mkUrl _opts segments = mconcat . PP.punctuate " + " $
+  PP.dquotes "/" :
+    PP.punctuate (" + " <> PP.dquotes "/") (map segmentToDoc segments)
   where
     segmentToDoc :: F.Segment KotlinClass -> Doc
     segmentToDoc segment =
       case F.unSegment segment of
-        F.Static path -> dquotes (stext (F.unPathSegment path))
+        F.Static path -> PP.dquotes (stext (F.unPathSegment path))
         F.Cap _arg    -> kotlinCaptureArg segment
 
 -- TODO: implements
@@ -356,7 +358,7 @@ defKotlinOptions = KotlinOptions
 
 docToText :: Doc -> Text
 docToText =
-  L.toStrict . displayT . renderPretty 0.4 100
+  L.toStrict . PP.displayT . PP.renderPretty 0.4 100
 
 stext :: Text -> Doc
-stext = text . L.fromStrict
+stext = PP.text . L.fromStrict
