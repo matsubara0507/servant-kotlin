@@ -1,5 +1,7 @@
 # Changelog for rakuten
 
+### 0.1.1.1
+
 - Refactor: relax pvp
   - aeson-1.3
   - hspec-2.5
