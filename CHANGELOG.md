@@ -1,4 +1,11 @@
-# Changelog for rakuten
+# Changelog for servant-kotlin
+
+### 0.1.1.2
+
+- Refactor: relax pvp
+  - aeson-1.4
+  - lens-4.17
+  - servant-0.14
 
 ### 0.1.1.1
 
