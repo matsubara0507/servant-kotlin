@@ -44,6 +44,6 @@ benchmarks:
     main: example/Generater.hs
     dependencies:
       - aeson >= 1.0 && < 1.5
-      - http-api-data >= 0.3.7 && < 0.3.9
+      - http-api-data >= 0.3.7 && < 0.3.11
       - servant-kotlin
       - shelly >= 1.6.8 && < 1.9
