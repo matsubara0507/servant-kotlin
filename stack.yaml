@@ -1,12 +1,17 @@
-resolver: nightly-2018-10-26
+resolver: nightly-2018-11-15
 packages:
 - .
 extra-deps: []
+# - servant-0.15
+# - servant-foreign-0.15
+# - http-api-data-0.4
+# - QuickCheck-2.12.6.1
+# - hspec-core-2.5.9
+# - hspec-2.5.9
+# - hspec-discover-2.5.9
 # - aeson-1.4.0.0
-# - servant-0.14.1
 # - lens-4.17
 # - http-types-0.12
-# - servant-foreign-0.11
 # - shelly-1.8.0
 # - time-1.9.1
 # - wl-pprint-text-1.2.0.0
