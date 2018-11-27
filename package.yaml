@@ -36,7 +36,7 @@ tests:
       - test
     dependencies:
       - aeson >= 1.0 && < 1.5
-      - hspec >= 2.4.1 && < 2.6
+      - hspec >= 2.4.1 && < 2.7
       - http-api-data >= 0.3.7 && < 0.4.1
 
 benchmarks:
