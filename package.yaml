@@ -1,5 +1,5 @@
 name:                servant-kotlin
-version:             0.1.1.4
+version:             0.1.1.5
 synopsis:            Automatically derive Kotlin class to query servant webservices
 description:         See README at <https://github.com/matsubara0507/servant-kotlin#readme>
 homepage:            https://github.com/matsubara0507/servant-kotlin#readme
