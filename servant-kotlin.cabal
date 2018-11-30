@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 18cb3edd560e571d3dbbb64ab1bbb90747ab0892ee7668bddccb162e4ab28678
+-- hash: 9d4b8670018d1cca58bebcf29e3fcb132ec6eec3469906fa73b4e43d9fb8460c
 
 name:           servant-kotlin
-version:        0.1.1.4
+version:        0.1.1.5
 synopsis:       Automatically derive Kotlin class to query servant webservices
 description:    See README at <https://github.com/matsubara0507/servant-kotlin#readme>
 category:       Web
@@ -59,7 +59,7 @@ test-suite spec
     , containers >=0.5.7 && <0.6.1
     , directory >=1.3 && <1.4
     , formatting >=6.2 && <6.4
-    , hspec >=2.4.1 && <2.6
+    , hspec >=2.4.1 && <2.7
     , http-api-data >=0.3.7 && <0.4.1
     , lens >=4.15 && <4.18
     , servant >=0.9 && <0.16

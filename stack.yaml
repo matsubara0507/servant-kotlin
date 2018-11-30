@@ -1,4 +1,4 @@
-resolver: nightly-2018-11-15
+resolver: nightly-2018-11-27
 packages:
 - .
 extra-deps: []
@@ -7,8 +7,10 @@ extra-deps: []
 # - http-api-data-0.4
 # - QuickCheck-2.12.6.1
 # - hspec-core-2.5.9
-# - hspec-2.5.9
-# - hspec-discover-2.5.9
+# - hspec-2.6.0
+# - hspec-core-2.6.0
+# - hspec-discover-2.6.0
+# - QuickCheck-2.12.6.1
 # - aeson-1.4.0.0
 # - lens-4.17
 # - http-types-0.12
