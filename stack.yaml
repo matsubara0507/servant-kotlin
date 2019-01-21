@@ -6,10 +6,9 @@ extra-deps: []
 # - servant-foreign-0.15
 # - http-api-data-0.4
 # - QuickCheck-2.12.6.1
-# - hspec-core-2.5.9
-# - hspec-2.6.0
-# - hspec-core-2.6.0
-# - hspec-discover-2.6.0
+# - hspec-core-2.7.0
+# - hspec-2.7.0
+# - hspec-discover-2.7.0
 # - QuickCheck-2.12.6.1
 # - aeson-1.4.0.0
 # - lens-4.17
