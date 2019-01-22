@@ -1,9 +1,14 @@
 # Changelog for servant-kotlin
 
+### 0.1.1.6
+
+- Refactor: relax pvp
+  - rspec-2.7
+
 ### 0.1.1.5
 
 - Refactor: relax pvp
-  - rspec-2.6 
+  - rspec-2.6
 
 ### 0.1.1.2
 
