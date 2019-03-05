@@ -1,8 +1,8 @@
-resolver: nightly-2018-11-27
+resolver: nightly-2019-03-05
 packages:
 - .
 extra-deps: []
-# - servant-0.15
+# - servant-0.16
 # - servant-foreign-0.15
 # - http-api-data-0.4
 # - QuickCheck-2.12.6.1
