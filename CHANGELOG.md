@@ -1,5 +1,10 @@
 # Changelog for servant-kotlin
 
+### 0.1.1.7
+
+- Refactor: relax pvp
+  - servant-0.16
+
 ### 0.1.1.6
 
 - Refactor: relax pvp
