@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b0a3e70273b9a6a8557135e54566c625f67453856f9ea2f92bb6792392127ef0
+-- hash: 2d39e40f755ad61943e01e08272bc90585b0b7e5269ea618d9e41b1c03db2dd4
 
 name:           servant-kotlin
 version:        0.1.1.6
@@ -31,7 +31,7 @@ library
     , directory >=1.3 && <1.4
     , formatting >=6.2 && <6.4
     , lens >=4.15 && <4.18
-    , servant >=0.9 && <0.16
+    , servant >=0.9 && <0.17
     , servant-foreign >=0.9 && <0.16
     , text >=1.2 && <1.3
     , time >=1.6 && <1.9
@@ -62,7 +62,7 @@ test-suite spec
     , hspec >=2.4.1 && <2.8
     , http-api-data >=0.3.7 && <0.4.1
     , lens >=4.15 && <4.18
-    , servant >=0.9 && <0.16
+    , servant >=0.9 && <0.17
     , servant-foreign >=0.9 && <0.16
     , text >=1.2 && <1.3
     , time >=1.6 && <1.9
@@ -90,7 +90,7 @@ benchmark generate-test
     , formatting >=6.2 && <6.4
     , http-api-data >=0.3.7 && <0.4.1
     , lens >=4.15 && <4.18
-    , servant >=0.9 && <0.16
+    , servant >=0.9 && <0.17
     , servant-foreign >=0.9 && <0.16
     , servant-kotlin
     , shelly >=1.6.8 && <1.9
