@@ -1,5 +1,10 @@
 # Changelog for servant-kotlin
 
+### 0.1.1.8
+
+- Refactor: relax pvp
+  - http-api-data-0.4.1
+
 ### 0.1.1.7
 
 - Refactor: relax pvp
