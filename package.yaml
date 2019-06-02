@@ -37,13 +37,13 @@ tests:
     dependencies:
       - aeson >= 1.0 && < 1.5
       - hspec >= 2.4.1 && < 2.8
-      - http-api-data >= 0.3.7 && < 0.4.1
+      - http-api-data >= 0.3.7 && < 0.4.2
 
 benchmarks:
   generate-test:
     main: example/Generater.hs
     dependencies:
       - aeson >= 1.0 && < 1.5
-      - http-api-data >= 0.3.7 && < 0.4.1
+      - http-api-data >= 0.3.7 && < 0.4.2
       - servant-kotlin
       - shelly >= 1.6.8 && < 1.9
