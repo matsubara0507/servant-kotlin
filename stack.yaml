@@ -1,10 +1,10 @@
-resolver: nightly-2019-03-05
+resolver: nightly-2019-06-01
 packages:
 - .
 extra-deps: []
-# - servant-0.16
+# - servant-0.16.1
 # - servant-foreign-0.15
-# - http-api-data-0.4
+# - http-api-data-0.4.1
 # - QuickCheck-2.12.6.1
 # - hspec-core-2.7.0
 # - hspec-2.7.0
