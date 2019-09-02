@@ -46,4 +46,4 @@ benchmarks:
       - aeson >= 1.0 && < 1.5
       - http-api-data >= 0.3.7 && < 0.4.2
       - servant-kotlin
-      - shelly >= 1.6.8 && < 1.9
+      - shelly >= 1.6.8 && < 1.10

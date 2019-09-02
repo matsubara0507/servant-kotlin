@@ -1,4 +1,4 @@
-resolver: nightly-2019-06-01
+resolver: nightly-2019-09-02
 packages:
 - .
 extra-deps: []
@@ -13,7 +13,7 @@ extra-deps: []
 # - aeson-1.4.0.0
 # - lens-4.17
 # - http-types-0.12
-# - shelly-1.8.0
+# - shelly-1.9.0
 # - time-1.9.1
 # - wl-pprint-text-1.2.0.0
 # - containers-0.6.0.1
