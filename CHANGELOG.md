@@ -1,5 +1,10 @@
 # Changelog for servant-kotlin
 
+### 0.1.1.9
+
+- Refactor: relax pvp
+  - shelly-1.9
+
 ### 0.1.1.8
 
 - Refactor: relax pvp
