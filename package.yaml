@@ -1,5 +1,5 @@
 name:                servant-kotlin
-version:             0.1.1.8
+version:             0.1.1.9
 synopsis:            Automatically derive Kotlin class to query servant webservices
 description:         See README at <https://github.com/matsubara0507/servant-kotlin#readme>
 homepage:            https://github.com/matsubara0507/servant-kotlin#readme
@@ -46,4 +46,4 @@ benchmarks:
       - aeson >= 1.0 && < 1.5
       - http-api-data >= 0.3.7 && < 0.4.2
       - servant-kotlin
-      - shelly >= 1.6.8 && < 1.9
+      - shelly >= 1.6.8 && < 1.10
